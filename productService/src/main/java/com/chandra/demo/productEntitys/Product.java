@@ -17,11 +17,12 @@ public class Product {
   @Id
   @GeneratedValue
   private Integer productId;
+  @JsonFormat(shape = JsonFormat.Shape.STRING)
   @NotBlank(message = "Product Name is mandatory")
   private String productName;
-
+  @JsonFormat(shape = JsonFormat.Shape.STRING)
   private String productType;
-
+  @JsonFormat(shape = JsonFormat.Shape.STRING)
   private String productPrice;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   private LocalDate productManufactureDate;
