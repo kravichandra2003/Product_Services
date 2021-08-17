@@ -1,6 +1,9 @@
 package com.chandra.demo.controllers;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +22,7 @@ public class Controllers {
 
   @PostMapping(value = "/saveProducts", consumes = MediaType.APPLICATION_JSON_VALUE,
       produces = MediaType.APPLICATION_JSON_VALUE)
-  public void saveProduct(@RequestBody Product entity) {
+  public void saveProduct(@Valid @RequestBody Product entity) {
 
     service.saveProduct(entity);
 
